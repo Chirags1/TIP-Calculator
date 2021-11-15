@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+        *{font-family:Georgia, 'Times New Roman', Times, serif;}
+      #main{margin:50px;background-color: rgb(247, 137, 155);padding:90px;width:60%;box-shadow: 2px 2px 3px rgb(5, 32, 43);
+      border-radius: 10px;}
+      label{margin:4px;width:20%;}
+      input{width:70%;padding: 3px;border-radius:5px;border:none;}
+      h3{font-weight: bold;text-shadow:1px 1px whitesmoke;}
+      button{padding:10px 26px;border:none;background-color: steelblue;color:white;font-variant: small-caps;}
+      </style>
+    <title>Tip Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <center>
+    <div id="main">
+        <h3>Tip Calculator</h3><br><br>
+        <label>Bill Amount</label>
+        <input type="text" id="billamount"><br>
+        <label>Tip Percent</label>
+        <input type="text" id="tipper"><br>
+        <label>Tip Amount</label>
+        <input type="text" id="tipamount" disabled><br>
+        <label>Total Bill</label>
+        <input type="text" id="totalbill" disabled><br><br>
+        <button onclick="calc()">Calculate</button>
+       </div>
+      </center>
+    <script>
+      function calc(){
+    let bill_amount=document.getElementById('billamount').value;
+    let  tip_percent=document.getElementById('tipper').value;
+    let  tip_amount=bill_amount*(tip_percent/100);
+    let  total_amount=Number(bill_amount)+Number(tip_amount);
+    document.getElementById('tipamount').value=tip_amount;
+    document.getElementById('totalbill').value=total_amount;
+    confirm("you have to pay " + total_amount);
+    }
+    </script>
+    
+</body>
+</html>
